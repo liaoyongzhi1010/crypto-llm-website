@@ -602,14 +602,28 @@ print(f"置信度: {result.confidence}")
             const menuToggle = document.getElementById('mobileMenuToggle');
             const navLinks = document.getElementById('navLinks');
 
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    navLinks.classList.toggle('active');
+                    console.log('菜单切换:', navLinks.classList.contains('active')); // 调试用
+                });
 
-            // 点击菜单项后关闭菜单
-            navLinks.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
+                // 点击菜单项后关闭菜单
+                navLinks.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('nav-link')) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+
+                // 点击页面其他地方关闭菜单
+                document.addEventListener('click', (e) => {
+                    if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            }
         }
 
         // 滚动效果
