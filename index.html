@@ -409,13 +409,13 @@
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <i class="fab fa-git-alt"></i>
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <h3>开源代码</h3>
-                        <p>访问GitHub获取完整的源代码和示例</p>
-                        <a href="https://github.com/Goodman-liyu/CipherBank" class="cyber-button" style="margin-top: 1rem;">
-                            <i class="fab fa-github"></i>
-                            访问GitHub
+                        <h3>模型地址</h3>
+                        <p>访问HuggingFace获取完整的模型权重和推理代码</p>
+                        <a href="https://huggingface.co/CipherBank" class="cyber-button" style="margin-top: 1rem;">
+                            <i class="fab fa-git-alt"></i>
+                            访问HuggingFace
                         </a>
                     </div>
                 </div>
@@ -524,6 +524,7 @@ print(f"置信度: {result.confidence}")
             setupNavigation();
             setupMobileMenu();
             setupScrollEffects();
+            setupCapabilityTabs();
         });
         function showComingSoon(event) {
             event.preventDefault();
@@ -597,18 +598,51 @@ print(f"置信度: {result.confidence}")
             });
         }
 
+        // 核心能力标签页切换
+        function setupCapabilityTabs() {
+            const capabilityTabs = document.querySelectorAll('.capability-tab');
+            const capabilityPanels = document.querySelectorAll('.capability-panel');
+            
+            capabilityTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const capability = tab.getAttribute('data-capability');
+                    
+                    // 移除所有活跃状态
+                    capabilityTabs.forEach(t => t.classList.remove('active'));
+                    capabilityPanels.forEach(p => p.classList.remove('active'));
+                    
+                    // 添加当前活跃状态
+                    tab.classList.add('active');
+                    const targetPanel = document.getElementById(capability);
+                    if (targetPanel) {
+                        targetPanel.classList.add('active');
+                    }
+                });
+            });
+        }
+
         // 移动端菜单
         function setupMobileMenu() {
             const menuToggle = document.getElementById('mobileMenuToggle');
             const navLinks = document.getElementById('navLinks');
 
+            console.log('设置移动端菜单:', menuToggle, navLinks); // 调试
+
             if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', (e) => {
+                // 移除之前的事件监听器
+                menuToggle.removeEventListener('click', toggleMenu);
+                
+                // 添加新的事件监听器
+                menuToggle.addEventListener('click', toggleMenu);
+                menuToggle.addEventListener('touchstart', toggleMenu); // 添加触摸事件
+
+                function toggleMenu(e) {
                     e.preventDefault();
                     e.stopPropagation();
+                    console.log('菜单按钮被点击'); // 调试
                     navLinks.classList.toggle('active');
-                    console.log('菜单切换:', navLinks.classList.contains('active')); // 调试用
-                });
+                    console.log('菜单状态:', navLinks.classList.contains('active')); // 调试
+                }
 
                 // 点击菜单项后关闭菜单
                 navLinks.addEventListener('click', (e) => {
@@ -623,6 +657,8 @@ print(f"置信度: {result.confidence}")
                         navLinks.classList.remove('active');
                     }
                 });
+            } else {
+                console.error('移动端菜单元素未找到:', { menuToggle, navLinks });
             }
         }
 
