@@ -626,40 +626,60 @@ print(f"置信度: {result.confidence}")
             const menuToggle = document.getElementById('mobileMenuToggle');
             const navLinks = document.getElementById('navLinks');
 
-            console.log('设置移动端菜单:', menuToggle, navLinks); // 调试
+            console.log('初始化移动端菜单:', menuToggle, navLinks);
 
-            if (menuToggle && navLinks) {
-                // 移除之前的事件监听器
-                menuToggle.removeEventListener('click', toggleMenu);
-                
-                // 添加新的事件监听器
-                menuToggle.addEventListener('click', toggleMenu);
-                menuToggle.addEventListener('touchstart', toggleMenu); // 添加触摸事件
+            if (!menuToggle || !navLinks) {
+                console.error('移动端菜单元素未找到');
+                return;
+            }
 
-                function toggleMenu(e) {
+            // 确保移除之前的监听器
+            const newMenuToggle = menuToggle.cloneNode(true);
+            menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+
+            // 获取新的元素引用
+            const freshMenuToggle = document.getElementById('mobileMenuToggle');
+            
+            // 添加多种事件监听
+            ['click', 'touchend'].forEach(eventType => {
+                freshMenuToggle.addEventListener(eventType, function(e) {
                     e.preventDefault();
                     e.stopPropagation();
-                    console.log('菜单按钮被点击'); // 调试
-                    navLinks.classList.toggle('active');
-                    console.log('菜单状态:', navLinks.classList.contains('active')); // 调试
+                    
+                    console.log('菜单触发:', eventType);
+                    
+                    const isActive = navLinks.classList.contains('active');
+                    console.log('当前状态:', isActive ? '打开' : '关闭');
+                    
+                    if (isActive) {
+                        navLinks.classList.remove('active');
+                        console.log('菜单已关闭');
+                    } else {
+                        navLinks.classList.add('active');
+                        console.log('菜单已打开');
+                    }
+                }, { passive: false });
+            });
+
+            // 点击菜单项后关闭菜单
+            navLinks.addEventListener('click', (e) => {
+                if (e.target.classList.contains('nav-link')) {
+                    navLinks.classList.remove('active');
+                    console.log('点击菜单项，菜单已关闭');
                 }
+            });
 
-                // 点击菜单项后关闭菜单
-                navLinks.addEventListener('click', (e) => {
-                    if (e.target.classList.contains('nav-link')) {
+            // 点击页面其他地方关闭菜单
+            document.addEventListener('click', (e) => {
+                if (!freshMenuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                    if (navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
+                        console.log('点击外部，菜单已关闭');
                     }
-                });
+                }
+            });
 
-                // 点击页面其他地方关闭菜单
-                document.addEventListener('click', (e) => {
-                    if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-                        navLinks.classList.remove('active');
-                    }
-                });
-            } else {
-                console.error('移动端菜单元素未找到:', { menuToggle, navLinks });
-            }
+            console.log('移动端菜单初始化完成');
         }
 
         // 滚动效果
