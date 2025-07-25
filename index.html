@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <!-- 粒子背景 - 移除复杂的粒子效果 -->
-
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
@@ -20,9 +18,8 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" class="nav-link active" data-page="home">首页</a></li>
-                <li><a href="#" class="nav-link" data-page="manual">用户手册</a></li>
+                <li><a href="#" class="nav-link" data-page="benchmark">评估</a></li>
                 <li><a href="#" class="nav-link" data-page="tutorial">教程</a></li>
-                <li><a href="#" class="nav-link" data-page="platform">平台入口</a></li>
                 <li><a href="#" class="nav-link" data-page="about">关于</a></li>
             </ul>
             <button class="mobile-menu-toggle" id="mobileMenuToggle">
@@ -46,17 +43,17 @@
                 </p>
                 
                 <div class="button-group">
-                    <a href="#" class="cyber-button" data-page="platform">
+                    <a href="https://chat.deepseek.com/" class="cyber-button" target="_blank">
                         <i class="fas fa-rocket"></i>
                         立即体验
                     </a>
-                    <a href="#" class="cyber-button" data-page="tutorial">
-                        <i class="fas fa-play"></i>
-                        观看教程
+                    <a href="#" class="cyber-button" data-page="benchmark">
+                        <i class="fas fa-chart-bar"></i>
+                        查看评估
                     </a>
-                    <a href="https://github.com/Goodman-liyu/CipherBank" class="cyber-button">
-                        <i class="fab fa-github"></i>
-                        源码
+                    <a href="#" class="cyber-button paper-coming-soon" onclick="showComingSoon(event)">
+                        <i class="fas fa-file-alt"></i>
+                        研究论文
                     </a>
                 </div>
             </section>
@@ -85,11 +82,11 @@
                 </div>
             </section>
 
-            <!-- 视频展示区域 -->
+            <!-- 模型介绍区域 -->
             <section class="video-showcase">
                 <div class="cyber-card">
-                    <h2><i class="fas fa-play-circle"></i>平台演示</h2>
-                    <p>观看玄机大模型的核心功能演示，了解密码学AI的强大能力</p>
+                    <h2><i class="fas fa-robot"></i>模型介绍</h2>
+                    <p>深入了解玄机大模型的技术原理和密码学推理能力，探索AI在密码分析领域的创新应用</p>
                     
                     <div class="video-container">
                         <div class="video-background">
@@ -124,10 +121,10 @@
                 </div>
             </section>
 
-            <!-- Dataset Composition -->
+            <!-- 数据集构成 -->
             <section class="dataset-composition">
                 <div class="cyber-card">
-                    <h2><i class="fas fa-database"></i>Dataset Composition</h2>
+                    <h2><i class="fas fa-database"></i>数据集构成</h2>
                     <p>CipherBank数据集的全面构成，涵盖5大主要领域和9种加密算法，为密码学AI研究提供丰富的训练和测试数据。</p>
                     
                     <div class="overview-image">
@@ -137,10 +134,81 @@
                 </div>
             </section>
 
-            <!-- Model Evaluation -->
+            <!-- 最新动态 -->
+            <section class="news-section">
+                <div class="cyber-card">
+                    <h2><i class="fas fa-newspaper"></i>最新动态</h2>
+                    <p>关注玄机大模型的最新研究进展、论文发表和技术突破，了解密码学AI领域的前沿动态。</p>
+                    
+                    <div class="news-content">
+                        <div class="news-grid">
+                            <div class="featured-news">
+                                <div class="news-card featured">
+                                    <div class="news-image">
+                                        <img src="./images/news-featured.jpg" alt="重磅发布">
+                                        <div class="news-badge">重磅发布</div>
+                                    </div>
+                                    <div class="news-info">
+                                        <h3>CipherBank基准测试正式发布：探索大语言模型密码学推理边界</h3>
+                                        <p>近日，玄机大模型团队正式发布CipherBank基准测试，这是首个专门针对大语言模型密码学推理能力的综合评估平台。该基准包含2,358个精心设计的密码学问题...</p>
+                                        <span class="news-date">2025-1-20</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="news-list">
+                                <div class="news-item">
+                                    <div class="news-thumb">
+                                        <img src="./images/news-1.jpg" alt="论文发布">
+                                    </div>
+                                    <div class="news-detail">
+                                        <h4>CipherBank论文被顶级会议接收</h4>
+                                        <p>我们的研究论文"CipherBank: Exploring the Boundary of LLM Reasoning Capabilities through Cryptography Challenges"已被国际顶级AI会议接收...</p>
+                                        <span class="news-date">2025-1-15</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="news-item">
+                                    <div class="news-thumb">
+                                        <img src="./images/news-2.jpg" alt="开源发布">
+                                    </div>
+                                    <div class="news-detail">
+                                        <h4>玄机大模型开源代码正式发布</h4>
+                                        <p>为推动密码学AI研究的发展，我们正式开源了CipherBank数据集和评估框架，欢迎全球研究者参与贡献...</p>
+                                        <span class="news-date">2025-1-10</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="news-item">
+                                    <div class="news-thumb">
+                                        <img src="./images/news-3.jpg" alt="学术合作">
+                                    </div>
+                                    <div class="news-detail">
+                                        <h4>与国际顶尖实验室展开密码学AI合作</h4>
+                                        <p>玄机大模型团队与MIT、斯坦福等国际顶尖实验室建立合作关系，共同推进密码学人工智能的前沿研究...</p>
+                                        <span class="news-date">2025-1-5</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="news-more">
+                            <a href="#" class="more-link">
+                                更多动态
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Benchmark页面 -->
+        <div id="benchmark" class="content-page">
+            <!-- 模型评估 -->
             <section class="model-evaluation">
                 <div class="cyber-card">
-                    <h2><i class="fas fa-chart-bar"></i>Model Evaluation</h2>
+                    <h2><i class="fas fa-chart-bar"></i>模型评估</h2>
                     <p>我们在CipherBank基准测试中评估了多个先进的大语言模型，包括Claude-3.5、o1、DeepSeek-V3和DeepSeek-R1等推理专用模型。</p>
                     
                     <div class="evaluation-table-container">
@@ -277,83 +345,34 @@
                         </table>
                     </div>
                     
-                    <div class="evaluation-summary">
-                        <div class="key-findings">
-                            <h3>关键发现</h3>
-                            <ul>
-                                <li>即使是顶级模型如Claude-3.5和o1也只达到了<span class="highlight-score">45.14</span>和<span class="highlight-score">40.59</span>的得分</li>
-                                <li>推理模型在密码学任务上普遍优于聊天模型</li>
-                                <li>闭源模型在整体性能上仍领先于开源模型</li>
-                                <li>复杂算法如Vigenère对所有模型都具有挑战性</li>
-                            </ul>
-                        </div>
+                    <div class="overview-image">
+                        <img src="./images/bench.jpg" alt="Benchmark Visualization" class="full-width-image">
+                        <p class="image-caption">Model Performance - Accuracy vs. Levenshtein Similarity</p>
                     </div>
                 </div>
             </section>
 
+            <!-- 性能评估 -->
             <div class="cyber-card">
                 <h2><i class="fas fa-chart-line"></i>性能评估</h2>
-                <p>我们在CipherBank基准测试中评估了多个先进的大语言模型，包括GPT-4o、DeepSeek-V3和推理专用模型如o1、DeepSeek-R1等。</p>
+                <p>基于CipherBank基准测试的评估显示，即使是最先进的大语言模型在密码学推理任务上仍有很大提升空间。</p>
                 
-                <div class="quote">
-                    "道生一，一生二，二生三，三生万物。" - 在密码学的世界里，简单的规则可以创造出无穷的复杂性。
+                <div class="overview-image">
+                    <img src="./images/performance.jpeg" alt="Performance Evaluation Overview" class="full-width-image">
+                    <p class="image-caption">Performance Evaluation Overview</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- 用户手册 -->
-        <div id="manual" class="content-page">
-            <div class="cyber-card">
-                <h2><i class="fas fa-book"></i>用户手册</h2>
                 
-                <h3><i class="fas fa-compass"></i>快速入门</h3>
-                <p>玄机大模型是一个集成了先进密码学推理能力的AI平台。本手册将引导您快速上手使用。</p>
-                
-                <h3><i class="fas fa-user-circle"></i>账户注册</h3>
-                <ol>
-                    <li>访问平台主页，点击"注册"按钮</li>
-                    <li>填写用户名、邮箱和密码</li>
-                    <li>验证邮箱完成注册</li>
-                    <li>登录系统开始使用</li>
-                </ol>
-
-                <h3><i class="fas fa-play-circle"></i>基本使用</h3>
-                <div class="cyber-table">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>功能模块</th>
-                                <th>描述</th>
-                                <th>使用场景</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>密码解析</td>
-                                <td>输入加密文本，系统自动识别加密算法并解密</td>
-                                <td>日常密码分析</td>
-                            </tr>
-                            <tr>
-                                <td>算法识别</td>
-                                <td>基于密文特征判断可能的加密算法类型</td>
-                                <td>未知算法分析</td>
-                            </tr>
-                            <tr>
-                                <td>批量处理</td>
-                                <td>支持多个密文的批量解密操作</td>
-                                <td>大规模数据处理</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="evaluation-summary">
+                    <div class="key-findings">
+                        <h3>关键发现</h3>
+                        <ul>
+                            <li>顶级模型Claude-3.5仅达到<span class="highlight-score">45.14%</span>的平均得分，显示密码学推理的挑战性</li>
+                            <li>推理专用模型（如o1、DeepSeek-R1）在复杂密码任务上表现更优</li>
+                            <li>简单算法如ROT和Atbash相对容易破解，复杂算法如Vigenère极具挑战性</li>
+                            <li>开源模型与闭源模型在密码学推理能力上存在显著差距</li>
+                        </ul>
+                    </div>
                 </div>
-
-                <h3><i class="fas fa-exclamation-triangle"></i>注意事项</h3>
-                <ul>
-                    <li>请确保输入的密文格式正确</li>
-                    <li>部分复杂算法可能需要较长处理时间</li>
-                    <li>系统会保护您的数据隐私</li>
-                    <li>如遇问题请联系技术支持</li>
-                </ul>
             </div>
         </div>
 
@@ -418,83 +437,6 @@ result = client.decrypt(cipher_text)
 print(f"原文: {result.plaintext}")
 print(f"算法: {result.algorithm}")
 print(f"置信度: {result.confidence}")
-                </div>
-            </div>
-        </div>
-
-        <!-- 平台入口 -->
-        <div id="platform" class="content-page">
-            <div class="cyber-card">
-                <h2><i class="fas fa-rocket"></i>平台入口</h2>
-                
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>Web控制台</h3>
-                        <p>基于浏览器的图形化界面，适合日常使用和学习</p>
-                        <a href="#" class="cyber-button" style="margin-top: 1rem;">
-                            <i class="fas fa-external-link-alt"></i>
-                            进入控制台
-                        </a>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-terminal"></i>
-                        </div>
-                        <h3>API接口</h3>
-                        <p>RESTful API服务，支持程序化调用和集成</p>
-                        <a href="#" class="cyber-button" style="margin-top: 1rem;">
-                            <i class="fas fa-code"></i>
-                            查看文档
-                        </a>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>移动应用</h3>
-                        <p>支持iOS和Android的移动端应用，随时随地进行密码分析</p>
-                        <a href="#" class="cyber-button" style="margin-top: 1rem;">
-                            <i class="fas fa-download"></i>
-                            下载应用
-                        </a>
-                    </div>
-                </div>
-
-                <div class="cyber-card">
-                    <h3><i class="fas fa-tools"></i>开发者工具</h3>
-                    <p>为开发者提供的完整工具链：</p>
-                    
-                    <div class="cyber-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>工具</th>
-                                    <th>功能</th>
-                                    <th>状态</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Python SDK</td>
-                                    <td>Python语言开发包</td>
-                                    <td><span style="color: var(--neon-blue);">✓ 可用</span></td>
-                                </tr>
-                                <tr>
-                                    <td>JavaScript SDK</td>
-                                    <td>前端开发支持</td>
-                                    <td><span style="color: var(--neon-blue);">✓ 可用</span></td>
-                                </tr>
-                                <tr>
-                                    <td>CLI工具</td>
-                                    <td>命令行界面</td>
-                                    <td><span style="color: var(--accent-color);">⚡ 即将发布</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         </div>
@@ -577,8 +519,44 @@ print(f"置信度: {result.confidence}")
     </main>
 
     <script>
-        // 粒子效果 - 简化，不需要复杂的粒子动画
-        // function createParticles() - 移除
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            setupNavigation();
+            setupMobileMenu();
+            setupScrollEffects();
+        });
+        function showComingSoon(event) {
+            event.preventDefault();
+            
+            // 创建提示框
+            const modal = document.createElement('div');
+            modal.className = 'coming-soon-modal';
+            modal.innerHTML = `
+                <div class="coming-soon-content">
+                    <div class="coming-soon-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <h3>Coming Soon</h3>
+                    <p>论文正在整理中，敬请期待！</p>
+                    <p>Paper is being prepared, stay tuned!</p>
+                    <button class="close-modal" onclick="closeComingSoon()">
+                        <i class="fas fa-times"></i>
+                        关闭
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            setTimeout(() => modal.classList.add('show'), 10);
+        }
+
+        function closeComingSoon() {
+            const modal = document.querySelector('.coming-soon-modal');
+            if (modal) {
+                modal.classList.remove('show');
+                setTimeout(() => modal.remove(), 300);
+            }
+        }
 
         // 页面导航
         function setupNavigation() {
@@ -672,65 +650,13 @@ print(f"置信度: {result.confidence}")
 
         // 初始化
         document.addEventListener('DOMContentLoaded', () => {
-            // createParticles(); // 移除复杂粒子效果
             setupNavigation();
             setupMobileMenu();
             setupScrollEffects();
+            setupNewsTabs();
         });
 
-        // 打字机效果
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            
-            type();
-        }
-
-        // 鼠标跟踪效果 - 简化，移除复杂的粒子跟踪
-        // document.addEventListener('mousemove', (e) => { ... } - 移除
-
-        // 复制功能
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                // 可以添加复制成功的提示
-                console.log('复制成功');
-            }).catch(err => {
-                console.error('复制失败:', err);
-            });
-        }
-
-        // 动态文字效果
-        function animateCounters() {
-            const counters = document.querySelectorAll('.counter');
-            
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-target'));
-                const increment = target / 100;
-                let current = 0;
-                
-                const updateCounter = () => {
-                    if (current < target) {
-                        current += increment;
-                        counter.textContent = Math.ceil(current);
-                        setTimeout(updateCounter, 20);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-                
-                updateCounter();
-            });
-        }
-
-        // 滚动动画 - 简化
+        // 滚动动画
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -745,7 +671,7 @@ print(f"置信度: {result.confidence}")
             });
         }, observerOptions);
 
-        // 观察所有卡片元素 - 简化动画
+        // 观察所有卡片元素
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.cyber-card, .feature-card');
             cards.forEach(card => {
