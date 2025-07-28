@@ -12,7 +12,8 @@
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo-section">
+            <!-- 修改logo部分，添加点击事件和data-page属性 -->
+            <div class="logo-section" data-page="home" onclick="goToHome()">
                 <i class="fas fa-yin-yang logo-icon"></i>
                 <span class="logo-text">玄机大模型</span>
             </div>
@@ -519,6 +520,18 @@ print(f"置信度: {result.confidence}")
     </main>
 
     <script>
+        // 添加logo点击跳转首页的函数
+        function goToHome() {
+            // 显示首页
+            showPage('home');
+            
+            // 可选：滚动到页面顶部
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
         // 初始化
         document.addEventListener('DOMContentLoaded', () => {
             setupNavigation();
@@ -526,6 +539,7 @@ print(f"置信度: {result.confidence}")
             setupScrollEffects();
             setupCapabilityTabs();
         });
+        
         function showComingSoon(event) {
             event.preventDefault();
             
@@ -596,6 +610,9 @@ print(f"置信度: {result.confidence}")
                     showPage(pageId);
                 });
             });
+
+            // 将showPage函数添加到全局作用域，以便goToHome函数可以使用
+            window.showPage = showPage;
         }
 
         // 核心能力标签页切换
@@ -717,14 +734,6 @@ print(f"置信度: {result.confidence}")
             videoPlayer.pause();
             videoPlayer.currentTime = 0; // 重置播放进度
         }
-
-        // 初始化
-        document.addEventListener('DOMContentLoaded', () => {
-            setupNavigation();
-            setupMobileMenu();
-            setupScrollEffects();
-            setupNewsTabs();
-        });
 
         // 滚动动画
         const observerOptions = {
