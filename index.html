@@ -520,26 +520,50 @@ print(f"置信度: {result.confidence}")
     </main>
 
     <script>
-        // 添加logo点击跳转首页的函数
+        // 导航栏滚动隐藏控制 - 任何滚动都隐藏
+        let scrollTimeout;
+
+        function setupSmartNavbar() {
+            const navbar = document.querySelector('.navbar');
+
+            window.addEventListener('scroll', () => {
+                // 防抖处理
+                if (scrollTimeout) {
+                    clearTimeout(scrollTimeout);
+                }
+
+                const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // 只有在页面最顶部时才显示导航栏
+                if (currentScrollTop <= 10) {
+                    navbar.classList.remove('hidden');
+                    navbar.classList.remove('scrolled');
+                } else {
+                    // 任何滚动都隐藏导航栏
+                    navbar.classList.add('hidden');
+                    // 滚动时添加背景效果（虽然隐藏了但保持状态）
+                    if (currentScrollTop > 50) {
+                        navbar.classList.add('scrolled');
+                    }
+                }
+
+                // 设置滚动结束后的延迟处理
+                scrollTimeout = setTimeout(() => {
+                    // 滚动结束逻辑
+                }, 100);
+            }, { passive: true });
+        }
+
+        // Logo点击跳转首页
         function goToHome() {
-            // 显示首页
             showPage('home');
-            
-            // 可选：滚动到页面顶部
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         }
 
-        // 初始化
-        document.addEventListener('DOMContentLoaded', () => {
-            setupNavigation();
-            setupMobileMenu();
-            setupScrollEffects();
-            setupCapabilityTabs();
-        });
-        
+        // 显示Coming Soon模态框
         function showComingSoon(event) {
             event.preventDefault();
             
@@ -573,7 +597,7 @@ print(f"置信度: {result.confidence}")
             }
         }
 
-        // 页面导航
+        // 页面导航系统
         function setupNavigation() {
             const navLinks = document.querySelectorAll('.nav-link');
             const contentPages = document.querySelectorAll('.content-page');
@@ -611,69 +635,37 @@ print(f"置信度: {result.confidence}")
                 });
             });
 
-            // 将showPage函数添加到全局作用域，以便goToHome函数可以使用
+            // 将showPage函数添加到全局作用域
             window.showPage = showPage;
         }
 
-        // 核心能力标签页切换
-        function setupCapabilityTabs() {
-            const capabilityTabs = document.querySelectorAll('.capability-tab');
-            const capabilityPanels = document.querySelectorAll('.capability-panel');
-            
-            capabilityTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const capability = tab.getAttribute('data-capability');
-                    
-                    // 移除所有活跃状态
-                    capabilityTabs.forEach(t => t.classList.remove('active'));
-                    capabilityPanels.forEach(p => p.classList.remove('active'));
-                    
-                    // 添加当前活跃状态
-                    tab.classList.add('active');
-                    const targetPanel = document.getElementById(capability);
-                    if (targetPanel) {
-                        targetPanel.classList.add('active');
-                    }
-                });
-            });
-        }
-
-        // 移动端菜单
+        // 移动端菜单控制
         function setupMobileMenu() {
             const menuToggle = document.getElementById('mobileMenuToggle');
             const navLinks = document.getElementById('navLinks');
 
-            console.log('初始化移动端菜单:', menuToggle, navLinks);
-
             if (!menuToggle || !navLinks) {
-                console.error('移动端菜单元素未找到');
                 return;
             }
 
-            // 确保移除之前的监听器
+            // 克隆元素以移除之前的监听器
             const newMenuToggle = menuToggle.cloneNode(true);
             menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
 
-            // 获取新的元素引用
             const freshMenuToggle = document.getElementById('mobileMenuToggle');
             
-            // 添加多种事件监听
+            // 添加点击事件
             ['click', 'touchend'].forEach(eventType => {
                 freshMenuToggle.addEventListener(eventType, function(e) {
                     e.preventDefault();
                     e.stopPropagation();
                     
-                    console.log('菜单触发:', eventType);
-                    
                     const isActive = navLinks.classList.contains('active');
-                    console.log('当前状态:', isActive ? '打开' : '关闭');
                     
                     if (isActive) {
                         navLinks.classList.remove('active');
-                        console.log('菜单已关闭');
                     } else {
                         navLinks.classList.add('active');
-                        console.log('菜单已打开');
                     }
                 }, { passive: false });
             });
@@ -682,7 +674,6 @@ print(f"置信度: {result.confidence}")
             navLinks.addEventListener('click', (e) => {
                 if (e.target.classList.contains('nav-link')) {
                     navLinks.classList.remove('active');
-                    console.log('点击菜单项，菜单已关闭');
                 }
             });
 
@@ -691,22 +682,7 @@ print(f"置信度: {result.confidence}")
                 if (!freshMenuToggle.contains(e.target) && !navLinks.contains(e.target)) {
                     if (navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
-                        console.log('点击外部，菜单已关闭');
                     }
-                }
-            });
-
-            console.log('移动端菜单初始化完成');
-        }
-
-        // 透明导航栏滚动效果
-        function setupScrollEffects() {
-            window.addEventListener('scroll', () => {
-                const navbar = document.querySelector('.navbar');
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
                 }
             });
         }
@@ -732,6 +708,13 @@ print(f"置信度: {result.confidence}")
             videoPlayer.pause();
             videoPlayer.currentTime = 0; // 重置播放进度
         }
+
+        // 初始化所有功能
+        document.addEventListener('DOMContentLoaded', () => {
+            setupNavigation();
+            setupMobileMenu();
+            setupSmartNavbar();
+        });
 
         // 滚动动画
         const observerOptions = {
