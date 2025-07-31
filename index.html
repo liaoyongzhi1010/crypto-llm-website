@@ -38,9 +38,6 @@
                 </div>
                 <h1>知玄大模型</h1>
                 <div class="hero-subtitle">CryptoLLM - 密码学大模型平台</div>
-                <div class="hero-quote">
-                    "玄之又玄，众妙之门。知和曰常，知常曰明。"
-                </div>
                 <p class="hero-description">
                     基于千问大模型深度微调，专注于密码学推理与分析。
                     融合古典易学智慧与现代密码学技术，探索大语言模型在密码推理领域的边界。
@@ -65,24 +62,24 @@
             <section class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3>千问微调</h3>
-                    <p>基于千问大模型架构进行专业微调，针对密码学任务优化，具备强大的密码分析和推理能力。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-key"></i>
-                    </div>
-                    <h3>密码专精</h3>
-                    <p>专门针对密码学领域训练，覆盖替换、置换、自定义三大类共9种加密算法的解密分析任务。</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
                         <i class="fas fa-database"></i>
                     </div>
-                    <h3>数据丰富</h3>
-                    <p>基于CipherBank数据集训练，包含2,358个精心设计的密码学问题，覆盖5大领域14个子域场景。</p>
+                    <h3>海量数据</h3>
+                    <p>基于互联网抓取的大规模密码样本数据，涵盖真实世界中的各类加密场景和变体算法。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>精准微调</h3>
+                    <p>利用丰富的密码数据集进行深度微调，模型对真实密码环境具有更强的适应性和准确性。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>深度理解</h3>
+                    <p>不仅具备解密能力，更能理解密码背后的数学原理，为密码学教育提供智能助手。</p>
                 </div>
             </section>
 
@@ -866,14 +863,6 @@ print(f"置信度: {result.confidence}")
             videoPlayer.currentTime = 0; // 重置播放进度
         }
 
-        // 初始化所有功能
-        document.addEventListener('DOMContentLoaded', () => {
-            setupNavigation();
-            setupMobileMenu();
-            setupSmartNavbar();
-            setupCapabilityTabs();
-        });
-
         // 核心能力标签切换
         function setupCapabilityTabs() {
             const tabButtons = document.querySelectorAll('.tab-button');
@@ -893,6 +882,14 @@ print(f"置信度: {result.confidence}")
                 });
             });
         }
+
+        // 初始化所有功能
+        document.addEventListener('DOMContentLoaded', () => {
+            setupNavigation();
+            setupMobileMenu();
+            setupSmartNavbar();
+            setupCapabilityTabs();
+        });
 
         // 滚动动画
         const observerOptions = {
