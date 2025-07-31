@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>玄机大模型 - CryptoLLM 密码大模型平台</title>
-    <meta name="description" content="玄机大模型：融合古典智慧与现代密码学的AI大模型平台">
+    <title>知玄大模型 - CryptoLLM 密码大模型平台</title>
+    <meta name="description" content="知玄大模型：融合古典智慧与现代密码学的AI大模型平台">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -15,7 +15,7 @@
             <!-- 修改logo部分，添加点击事件和data-page属性 -->
             <div class="logo-section" data-page="home" onclick="goToHome()">
                 <i class="fas fa-yin-yang logo-icon"></i>
-                <span class="logo-text">玄机大模型</span>
+                <span class="logo-text">知玄大模型</span>
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" class="nav-link active" data-page="home">首页</a></li>
@@ -36,11 +36,14 @@
                 <div class="hero-icon">
                     <i class="fas fa-shield-halved"></i>
                 </div>
-                <h1>玄机大模型</h1>
+                <h1>知玄大模型</h1>
                 <div class="hero-subtitle">CryptoLLM - 密码学大模型平台</div>
+                <div class="hero-quote">
+                    "玄之又玄，众妙之门。知和曰常，知常曰明。"
+                </div>
                 <p class="hero-description">
+                    基于千问大模型深度微调，专注于密码学推理与分析。
                     融合古典易学智慧与现代密码学技术，探索大语言模型在密码推理领域的边界。
-                    承"道法自然"之理念，集"山海经"之奇思，构建新一代智能密码分析平台。
                 </p>
                 
                 <div class="button-group">
@@ -48,9 +51,9 @@
                         <i class="fas fa-rocket"></i>
                         立即体验
                     </a>
-                    <a href="#" class="cyber-button" data-page="benchmark">
+                    <a href="https://huggingface.co/CipherBank" class="cyber-button" target="_blank">
                         <i class="fas fa-chart-bar"></i>
-                        查看评估
+                        测评基准
                     </a>
                     <a href="#" class="cyber-button paper-coming-soon" onclick="showComingSoon(event)">
                         <i class="fas fa-file-alt"></i>
@@ -62,24 +65,24 @@
             <section class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-brain"></i>
+                        <i class="fas fa-microchip"></i>
                     </div>
-                    <h3>智能推理</h3>
-                    <p>基于最新大语言模型技术，具备强大的密码学推理能力，能够处理多种加密算法的解密任务。</p>
+                    <h3>千问微调</h3>
+                    <p>基于千问大模型架构进行专业微调，针对密码学任务优化，具备强大的密码分析和推理能力。</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-network-wired"></i>
+                        <i class="fas fa-key"></i>
                     </div>
-                    <h3>多域支持</h3>
-                    <p>覆盖个人隐私、企业敏感、公共安全、金融资产、互联网记录等5大领域的密码学应用场景。</p>
+                    <h3>密码专精</h3>
+                    <p>专门针对密码学领域训练，覆盖替换、置换、自定义三大类共9种加密算法的解密分析任务。</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-cogs"></i>
+                        <i class="fas fa-database"></i>
                     </div>
-                    <h3>算法丰富</h3>
-                    <p>支持替换、置换、自定义三大类共9种加密算法，从经典密码到现代加密技术全覆盖。</p>
+                    <h3>数据丰富</h3>
+                    <p>基于CipherBank数据集训练，包含2,358个精心设计的密码学问题，覆盖5大领域14个子域场景。</p>
                 </div>
             </section>
 
@@ -87,7 +90,7 @@
             <section class="video-showcase">
                 <div class="cyber-card">
                     <h2><i class="fas fa-robot"></i>模型介绍</h2>
-                    <p>深入了解玄机大模型的技术原理和密码学推理能力，探索AI在密码分析领域的创新应用</p>
+                    <p>深入了解知玄大模型的技术原理和密码学推理能力，探索AI在密码分析领域的创新应用</p>
                     
                     <div class="video-container">
                         <div class="video-background">
@@ -135,11 +138,165 @@
                 </div>
             </section>
 
+            <!-- 核心能力 -->
+            <section class="core-capabilities">
+                <div class="cyber-card">
+                    <h2><i class="fas fa-cog"></i>核心能力</h2>
+                    <p>知玄大模型在密码学领域的核心技术能力，从基础解密到高级推理，全方位支持密码学研究与应用。</p>
+                    
+                    <div class="capabilities-tabs">
+                        <div class="tab-nav">
+                            <button class="tab-button active" data-tab="decryption">
+                                <i class="fas fa-unlock"></i>
+                                密码解密
+                            </button>
+                            <button class="tab-button" data-tab="analysis">
+                                <i class="fas fa-search"></i>
+                                模式分析
+                            </button>
+                            <button class="tab-button" data-tab="reasoning">
+                                <i class="fas fa-brain"></i>
+                                逻辑推理
+                            </button>
+                            <button class="tab-button" data-tab="generation">
+                                <i class="fas fa-magic"></i>
+                                算法生成
+                            </button>
+                        </div>
+                        
+                        <div class="tab-content">
+                            <div class="tab-panel active" id="decryption">
+                                <div class="capability-content">
+                                    <div class="capability-text">
+                                        <h3>多算法密码解密</h3>
+                                        <p>支持9种主流密码算法的自动识别与解密，包括替换、置换和自定义算法。模型能够准确判断加密类型并提供最优解密方案。</p>
+                                        <ul class="capability-features">
+                                            <li><i class="fas fa-check"></i>ROT系列、Atbash、Polybius替换密码</li>
+                                            <li><i class="fas fa-check"></i>Vigenère多表替换密码破解</li>
+                                            <li><i class="fas fa-check"></i>Reverse、SwapPairs置换算法</li>
+                                            <li><i class="fas fa-check"></i>DualAvgCode等自定义算法支持</li>
+                                        </ul>
+                                    </div>
+                                    <div class="capability-visual">
+                                        <div class="decrypt-demo">
+                                            <div class="input-cipher">Uryyb Jbeyq!</div>
+                                            <div class="decrypt-arrow">
+                                                <i class="fas fa-arrow-down"></i>
+                                                <span>ROT13解密</span>
+                                            </div>
+                                            <div class="output-plain">Hello World!</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-panel" id="analysis">
+                                <div class="capability-content">
+                                    <div class="capability-text">
+                                        <h3>智能模式分析</h3>
+                                        <p>通过深度学习技术分析密文特征，识别加密模式和算法类型。能够检测字符频率、模式重复、密钥长度等关键信息。</p>
+                                        <ul class="capability-features">
+                                            <li><i class="fas fa-check"></i>字符频率统计与分析</li>
+                                            <li><i class="fas fa-check"></i>密钥长度自动推断</li>
+                                            <li><i class="fas fa-check"></i>加密模式智能识别</li>
+                                            <li><i class="fas fa-check"></i>算法类型自动分类</li>
+                                        </ul>
+                                    </div>
+                                    <div class="capability-visual">
+                                        <div class="analysis-chart">
+                                            <div class="chart-title">字符频率分析</div>
+                                            <div class="freq-bars">
+                                                <div class="freq-bar" style="height: 60%"><span>A</span></div>
+                                                <div class="freq-bar" style="height: 40%"><span>B</span></div>
+                                                <div class="freq-bar" style="height: 80%"><span>C</span></div>
+                                                <div class="freq-bar" style="height: 35%"><span>D</span></div>
+                                                <div class="freq-bar" style="height: 90%"><span>E</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-panel" id="reasoning">
+                                <div class="capability-content">
+                                    <div class="capability-text">
+                                        <h3>高级逻辑推理</h3>
+                                        <p>基于大语言模型的推理能力，能够处理复杂的密码学问题，进行多步骤推理和上下文理解。</p>
+                                        <ul class="capability-features">
+                                            <li><i class="fas fa-check"></i>多步骤解密推理</li>
+                                            <li><i class="fas fa-check"></i>上下文信息利用</li>
+                                            <li><i class="fas fa-check"></i>异常模式检测</li>
+                                            <li><i class="fas fa-check"></i>智能错误纠正</li>
+                                        </ul>
+                                    </div>
+                                    <div class="capability-visual">
+                                        <div class="reasoning-flow">
+                                            <div class="reasoning-step">
+                                                <div class="step-number">1</div>
+                                                <div class="step-text">模式识别</div>
+                                            </div>
+                                            <div class="reasoning-arrow">→</div>
+                                            <div class="reasoning-step">
+                                                <div class="step-number">2</div>
+                                                <div class="step-text">算法推断</div>
+                                            </div>
+                                            <div class="reasoning-arrow">→</div>
+                                            <div class="reasoning-step">
+                                                <div class="step-number">3</div>
+                                                <div class="step-text">参数确定</div>
+                                            </div>
+                                            <div class="reasoning-arrow">→</div>
+                                            <div class="reasoning-step">
+                                                <div class="step-number">4</div>
+                                                <div class="step-text">解密验证</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-panel" id="generation">
+                                <div class="capability-content">
+                                    <div class="capability-text">
+                                        <h3>密码算法生成</h3>
+                                        <p>不仅能够解密现有算法，还能生成新的加密方案和变体算法，为密码学研究提供创新思路。</p>
+                                        <ul class="capability-features">
+                                            <li><i class="fas fa-check"></i>算法变体自动生成</li>
+                                            <li><i class="fas fa-check"></i>加密强度评估</li>
+                                            <li><i class="fas fa-check"></i>安全性分析报告</li>
+                                            <li><i class="fas fa-check"></i>优化建议提供</li>
+                                        </ul>
+                                    </div>
+                                    <div class="capability-visual">
+                                        <div class="generation-demo">
+                                            <div class="algo-box">
+                                                <div class="algo-title">传统算法</div>
+                                                <div class="algo-content">ROT13</div>
+                                            </div>
+                                            <div class="generation-plus">+</div>
+                                            <div class="algo-box">
+                                                <div class="algo-title">AI创新</div>
+                                                <div class="algo-content">智能变体</div>
+                                            </div>
+                                            <div class="generation-arrow">→</div>
+                                            <div class="algo-box result">
+                                                <div class="algo-title">增强算法</div>
+                                                <div class="algo-content">ROT13+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- 最新动态 -->
             <section class="news-section">
                 <div class="cyber-card">
                     <h2><i class="fas fa-newspaper"></i>最新动态</h2>
-                    <p>关注玄机大模型的最新研究进展、论文发表和技术突破，了解密码学AI领域的前沿动态。</p>
+                    <p>关注知玄大模型的最新研究进展、论文发表和技术突破，了解密码学AI领域的前沿动态。</p>
                     
                     <div class="news-content">
                         <div class="news-grid">
@@ -151,7 +308,7 @@
                                     </div>
                                     <div class="news-info">
                                         <h3>CipherBank基准测试正式发布：探索大语言模型密码学推理边界</h3>
-                                        <p>近日，玄机大模型团队正式发布CipherBank基准测试，这是首个专门针对大语言模型密码学推理能力的综合评估平台。该基准包含2,358个精心设计的密码学问题...</p>
+                                        <p>近日，知玄大模型团队正式发布CipherBank基准测试，这是首个专门针对大语言模型密码学推理能力的综合评估平台。该基准包含2,358个精心设计的密码学问题...</p>
                                         <span class="news-date">2025-1-20</span>
                                     </div>
                                 </div>
@@ -174,7 +331,7 @@
                                         <img src="./images/news-2.jpg" alt="开源发布">
                                     </div>
                                     <div class="news-detail">
-                                        <h4>玄机大模型开源代码正式发布</h4>
+                                        <h4>知玄大模型开源代码正式发布</h4>
                                         <p>为推动密码学AI研究的发展，我们正式开源了CipherBank数据集和评估框架，欢迎全球研究者参与贡献...</p>
                                         <span class="news-date">2025-1-10</span>
                                     </div>
@@ -186,7 +343,7 @@
                                     </div>
                                     <div class="news-detail">
                                         <h4>与国际顶尖实验室展开密码学AI合作</h4>
-                                        <p>玄机大模型团队与MIT、斯坦福等国际顶尖实验室建立合作关系，共同推进密码学人工智能的前沿研究...</p>
+                                        <p>知玄大模型团队与MIT、斯坦福等国际顶尖实验室建立合作关系，共同推进密码学人工智能的前沿研究...</p>
                                         <span class="news-date">2025-1-5</span>
                                     </div>
                                 </div>
@@ -445,24 +602,24 @@ print(f"置信度: {result.confidence}")
         <!-- 关于页面 -->
         <div id="about" class="content-page">
             <div class="cyber-card">
-                <h2><i class="fas fa-info-circle"></i>关于玄机大模型</h2>
+                <h2><i class="fas fa-info-circle"></i>关于知玄大模型</h2>
                 
                 <div class="quote">
-                    "天地不仁，以万物为刍狗。圣人不仁，以百姓为刍狗。" - 道德经第五章
+                    "玄之又玄，众妙之门。知和曰常，知常曰明。" - 道德经
                 </div>
                 
-                <p>玄机大模型，取名自道德经"玄之又玄，众妙之门"与山海经神奇瑰丽的想象。我们相信，在密码学的世界里，每一个算法都蕴含着古老的智慧与现代的创新。</p>
+                <p>知玄大模型，取名自道德经"玄之又玄，众妙之门"与"知和曰常，知常曰明"的深刻哲理。我们相信，在密码学的世界里，每一个算法都蕴含着古老的智慧与现代的创新。</p>
 
                 <h3><i class="fas fa-lightbulb"></i>设计理念</h3>
                 <ul>
                     <li><strong>道法自然</strong>：遵循密码学的本质规律，让AI理解加密的内在逻辑</li>
-                    <li><strong>阴阳平衡</strong>：在加密与解密之间找到平衡点</li>
+                    <li><strong>知常明理</strong>：掌握密码学的常理，在规律中寻找突破</li>
                     <li><strong>厚德载物</strong>：承载各种密码算法，兼容并包</li>
                     <li><strong>自强不息</strong>：持续改进模型性能，追求完美</li>
                 </ul>
 
                 <h3><i class="fas fa-mountain"></i>技术架构</h3>
-                <p>玄机大模型基于CipherBank数据集构建，包含2,358个精心设计的密码学问题，覆盖5大领域、14个子域，支持9种不同的加密算法。</p>
+                <p>知玄大模型基于千问架构进行专业微调，在CipherBank数据集上训练，包含2,358个精心设计的密码学问题，覆盖5大领域、14个子域，支持9种不同的加密算法。</p>
 
                 <div class="features-grid">
                     <div class="feature-card">
@@ -714,7 +871,28 @@ print(f"置信度: {result.confidence}")
             setupNavigation();
             setupMobileMenu();
             setupSmartNavbar();
+            setupCapabilityTabs();
         });
+
+        // 核心能力标签切换
+        function setupCapabilityTabs() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+                    
+                    // 移除所有活动状态
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanels.forEach(panel => panel.classList.remove('active'));
+                    
+                    // 添加活动状态
+                    button.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        }
 
         // 滚动动画
         const observerOptions = {
