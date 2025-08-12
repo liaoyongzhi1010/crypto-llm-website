@@ -18,7 +18,19 @@
     from { opacity: 0; }
     to { opacity: 1; }
 }
+.hero-logo {
+    width: 150px;        /* 按需要调整宽度 */
+    height: auto;       /* 保持比例 */
+    display: block;     /* 避免图片底部出现空隙 */
+    margin: 0 auto;     /* 水平居中 */
+}
 
+.logo-image {
+    height: 32px;      /* 根据需要调整高度 */
+    width: auto;       /* 自动按比例缩放 */
+    margin-right: 8px; /* 图像与文字间距 */
+    vertical-align: baseline; /* 让图像和文字垂直对齐 */
+}
 .video-frame.hidden {
     display: none;
 }
