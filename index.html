@@ -14,8 +14,11 @@
         <div class="nav-container">
             <!-- 修改logo部分，添加点击事件和data-page属性 -->
             <div class="logo-section" data-page="home" onclick="goToHome()">
-                <i class="fas fa-yin-yang logo-icon"></i>
-                <span class="logo-text">玄知大模型</span>
+                <div class="logo-section" data-page="home" onclick="goToHome()">
+                    <img src="./images/logo.png" alt="玄知大模型 Logo" class="logo-image">
+                    <span class="logo-text">玄知大模型</span>
+                </div>
+
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" class="nav-link active" data-page="home">首页</a></li>
@@ -33,7 +36,7 @@
         <div id="home" class="content-page active">
             <section class="hero">
                 <div class="hero-icon">
-                    <i class="fas fa-shield-halved"></i>
+                    <img src="./images/logo.png" alt="玄知大模型 Logo" class="hero-logo">
                 </div>
                 <h1>玄知大模型</h1>
                 <div class="hero-subtitle">CryptoLLM - 密码学大模型平台</div>
@@ -91,7 +94,7 @@
                                 width="90%"
                                 height="80%"
                                 style="max-width: 1200px; max-height: 675px; border-radius: var(--border-radius);">
-                                <source src="./vedio.mp4" type="video/mp4">
+                                <source src="./video.mp4" type="video/mp4">
                                 您的浏览器不支持视频播放。
                             </video>
                         </div>
