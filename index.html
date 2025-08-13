@@ -7,18 +7,105 @@
     <meta name="description" content="玄知大模型：融合古典智慧与现代密码学的AI大模型平台">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 新的评估表格样式 */
+        .new-evaluation-table-container {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+            overflow-x: auto;
+        }
+
+        .new-evaluation-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 1400px;
+            background: var(--card-bg);
+            color: var(--text-color);
+        }
+
+        .new-evaluation-table th {
+            background: var(--card-bg);
+            color: var(--primary-color);
+            font-weight: 700;
+            text-align: center;
+            padding: 1rem 0.8rem;
+            border: 1px solid #eee;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .new-evaluation-table th.model-header {
+            background: var(--card-bg);
+            width: 120px;
+            text-align: left;
+            padding-left: 1rem;
+        }
+
+        .new-evaluation-table td {
+            padding: 1rem 0.8rem;
+            border: 1px solid #eee;
+            text-align: center;
+            font-weight: 600;
+            background: var(--card-bg);
+            transition: background-color 0.3s ease;
+        }
+
+        .new-evaluation-table td.model-name {
+            text-align: left;
+            background: var(--card-bg);
+            color: var(--primary-color);
+            font-weight: 700;
+            padding-left: 1rem;
+        }
+
+        .new-evaluation-table tr:hover td {
+            background: rgba(52, 152, 219, 0.05);
+        }
+
+        /* 最佳分数标红 */
+        .best-score-cell {
+            color: #e74c3c !important;
+            font-weight: 700;
+        }
+
+        /* 普通分数为黑色 */
+        .normal-score {
+            color: var(--text-color);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .new-evaluation-table-container {
+                margin: 1rem -1rem;
+                border-radius: 0;
+            }
+            
+            .new-evaluation-table {
+                font-size: 0.75rem;
+                min-width: 1200px;
+            }
+            
+            .new-evaluation-table th,
+            .new-evaluation-table td {
+                padding: 0.6rem 0.4rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar">
         <div class="nav-container">
-            <!-- 修改logo部分，添加点击事件和data-page属性 -->
             <div class="logo-section" data-page="home" onclick="goToHome()">
                 <div class="logo-section" data-page="home" onclick="goToHome()">
                     <img src="./images/logo.png" alt="玄知大模型 Logo" class="logo-image">
                     <span class="logo-text">玄知大模型</span>
                 </div>
-
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#" class="nav-link active" data-page="home">首页</a></li>
@@ -61,8 +148,6 @@
                 </div>
             </section>
 
-
-
             <!-- 模型介绍区域 -->
             <section class="video-showcase">
                 <div class="cyber-card">
@@ -83,7 +168,6 @@
                             </div>
                         </div>
                         
-                        <!-- 隐藏的视频播放器，点击后显示 -->
                         <div id="videoFrame" class="video-frame hidden">
                             <button class="close-video" onclick="closeVideo()">
                                 <i class="fas fa-times"></i>
@@ -110,7 +194,6 @@
                     
                     <div class="overview-image">
                         <img src="./images/overview_dataset.png" alt="CryptoLLM Dataset Overview" class="full-width-image">
-                        <!--<p class="image-caption">Overview of CryptoLLM</p>-->
                     </div>
                 </div>
             </section>
@@ -122,9 +205,6 @@
                     <p>玄知大模型在密码学领域的核心技术能力，从基础解密到高级推理，全方位支持密码学研究与应用。</p>
                     <div class="overview-image">
                         <img src="./images/ability.png" alt="CryptoLLM Dataset Overview" class="full-width-image">
-                        <!--<p class="image-caption">Overview of CryptoLLM</p>-->
-
-                        </div>
                     </div>
                 </div>
             </section>
@@ -136,138 +216,29 @@
             <section class="model-evaluation">
                 <div class="cyber-card">
                     <h2><i class="fas fa-chart-bar"></i>模型评估</h2>
-                    <p>我们在CryptoLLM基准测试中评估了多个先进的大语言模型，包括Claude-3.5、o1、DeepSeek-V3和DeepSeek-R1等推理专用模型。</p>
+                    <p>我们在CryptoLLM基准测试中评估了多个先进的大语言模型，包括Claude-3.5、o1、DeepSeek-V3和DeepSeek-R1等推理专用模型。以下是各模型在密码学不同领域的表现：</p>
                     
-                    <div class="evaluation-table-container">
-                        <table class="evaluation-table">
+                    <div class="new-evaluation-table-container">
+                        <table class="new-evaluation-table">
                             <thead>
                                 <tr>
-                                    <th rowspan="2" class="basic-header rank-col">RANK</th>
-                                    <th rowspan="2" class="basic-header type-col">MODEL TYPE</th>
-                                    <th rowspan="2" class="basic-header model-col">MODEL</th>
-                                    <th rowspan="2" class="basic-header score-col">AVG SCORE</th>
-                                    <th colspan="4" class="algorithm-group">SUBSTITUTION</th>
-                                    <th colspan="2" class="algorithm-group">TRANSPOSITION</th>
-                                    <th colspan="3" class="algorithm-group">CUSTOM</th>
-                                </tr>
-                                <tr>
-                                    <th class="algorithm-col">ROT</th>
-                                    <th class="algorithm-col">ATBASH</th>
-                                    <th class="algorithm-col">POLYBIUS</th>
-                                    <th class="algorithm-col">VIGENÈRE</th>
-                                    <th class="algorithm-col">REVERSE</th>
-                                    <th class="algorithm-col">SWAPPAIRS</th>
-                                    <th class="algorithm-col">DUALAVGCODE</th>
-                                    <th class="algorithm-col">PARITYSHIFT</th>
-                                    <th class="algorithm-col">WORDSHIFT</th>
+                                    <th class="model-header">大模型</th>
+                                    <th>密码基础</th>
+                                    <th>数学基础</th>
+                                    <th>对称密码</th>
+                                    <th>非对称密码</th>
+                                    <th>密码协议</th>
+                                    <th>哈希函数</th>
+                                    <th>数字签名</th>
+                                    <th>密码库与语言</th>
+                                    <th>硬件中的密码</th>
+                                    <th>网安中的密码</th>
+                                    <th>密码高级主题</th>
+                                    <th>安全性证明</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td><span class="model-type-label model-type-closed">Closed-source Chat Model</span></td>
-                                    <td>Claude-Sonnet-3.5-1022</td>
-                                    <td class="best-score">45.14</td>
-                                    <td>83.21</td>
-                                    <td>75.19</td>
-                                    <td>72.90</td>
-                                    <td>1.91</td>
-                                    <td>63.93</td>
-                                    <td>6.87</td>
-                                    <td>4.96</td>
-                                    <td>58.21</td>
-                                    <td>39.12</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td><span class="model-type-label model-type-reasoning">Reasoning Model</span></td>
-                                    <td>o1-2024-12-17</td>
-                                    <td class="best-score">40.59</td>
-                                    <td>59.92</td>
-                                    <td>79.01</td>
-                                    <td>79.39</td>
-                                    <td>7.25</td>
-                                    <td>14.89</td>
-                                    <td>32.14</td>
-                                    <td>50.38</td>
-                                    <td>12.39</td>
-                                    <td>29.90</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td><span class="model-type-label model-type-reasoning">Reasoning Model</span></td>
-                                    <td>DeepSeek-R1</td>
-                                    <td class="best-score">25.91</td>
-                                    <td>73.28</td>
-                                    <td>58.78</td>
-                                    <td>44.27</td>
-                                    <td>0.38</td>
-                                    <td>10.69</td>
-                                    <td>0.38</td>
-                                    <td>24.05</td>
-                                    <td>12.98</td>
-                                    <td>8.40</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td><span class="model-type-label model-type-reasoning">Reasoning Model</span></td>
-                                    <td>o1-mini-2024-09-12</td>
-                                    <td class="best-score">20.07</td>
-                                    <td>46.18</td>
-                                    <td>68.32</td>
-                                    <td>46.95</td>
-                                    <td>1.53</td>
-                                    <td>5.15</td>
-                                    <td>0.38</td>
-                                    <td>2.93</td>
-                                    <td>7.63</td>
-                                    <td>1.53</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td><span class="model-type-label model-type-reasoning">Reasoning Model</span></td>
-                                    <td>gemini-2.0-flash-thinking</td>
-                                    <td class="best-score">13.49</td>
-                                    <td>40.46</td>
-                                    <td>17.18</td>
-                                    <td>21.76</td>
-                                    <td>1.15</td>
-                                    <td>22.90</td>
-                                    <td>1.15</td>
-                                    <td>0</td>
-                                    <td>7.63</td>
-                                    <td>9.16</td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td><span class="model-type-label model-type-opensource">Open-source Chat Model</span></td>
-                                    <td>DeepSeek-V3</td>
-                                    <td class="best-score">9.86</td>
-                                    <td>32.44</td>
-                                    <td>14.88</td>
-                                    <td>2.29</td>
-                                    <td>0.76</td>
-                                    <td>28.47</td>
-                                    <td>0.38</td>
-                                    <td>0.38</td>
-                                    <td>1.14</td>
-                                    <td>8.02</td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td><span class="model-type-label model-type-closed">Closed-source Chat Model</span></td>
-                                    <td>GPT-4o-2024-08-06</td>
-                                    <td class="best-score">8.82</td>
-                                    <td>38.17</td>
-                                    <td>3.05</td>
-                                    <td>0.38</td>
-                                    <td>0.76</td>
-                                    <td>25.19</td>
-                                    <td>2.29</td>
-                                    <td>0</td>
-                                    <td>1.14</td>
-                                    <td>8.40</td>
-                                </tr>
+                            <tbody id="evaluationTableBody">
+                                <!-- 数据将通过JavaScript插入 -->
                             </tbody>
                         </table>
                     </div>
@@ -293,9 +264,9 @@
                     <div class="key-findings">
                         <h3>关键发现</h3>
                         <ul>
-                            <li>顶级模型Claude-3.5仅达到<span class="highlight-score">45.14%</span>的平均得分，显示密码学推理的挑战性</li>
+                            <li>CryptoLLM在所有测试领域都取得了<span class="highlight-score">最佳性能</span>，展现了专业化训练的优势</li>
                             <li>推理专用模型（如o1、DeepSeek-R1）在复杂密码任务上表现更优</li>
-                            <li>简单算法如ROT和Atbash相对容易破解，复杂算法如Vigenère极具挑战性</li>
+                            <li>密码基础和对称密码领域相对容易破解，非对称密码和安全性证明极具挑战性</li>
                             <li>开源模型与闭源模型在密码学推理能力上存在显著差距</li>
                         </ul>
                     </div>
@@ -303,77 +274,173 @@
             </div>
         </div>
 
-
-
         <!-- 关于页面 -->
         <div id="about" class="content-page">
             <div class="cyber-card">
                 <h2><i class="fas fa-info-circle"></i>关于玄知大模型</h2>
                 
-                <div class="quote">
-                    "玄之又玄，众妙之门。知和曰常，知常曰明。" - 道德经
+                <h3><span class="fas fa-yin-yang"></span> 一、"玄"字在《道德经》中的出处与寓意</h3>
+                <div class="philosophy-section">
+                    <h4><strong>出处</strong></h4>
+                    <ul>
+                        <li>《道德经》第一章："玄之又玄，众妙之门。"</li>
+                    </ul>
+                    <h4><strong>寓意</strong></h4>
+                    <ul>
+                        <li>"玄"在道家哲学中指代<strong>深奥、幽远、不可言说、宇宙本源</strong>，是超越表象的本质。</li>
+                        <li>用于模型命名，强调<strong>深不可测、通达本源、掌控大道</strong>，正契合加密算法的复杂性和AI智能的深度。</li>
+                    </ul>
                 </div>
-                
-                <p>玄知大模型，取名自道德经"玄之又玄，众妙之门"与"知和曰常，知常曰明"的深刻哲理。我们相信，在密码学的世界里，每一个算法都蕴含着古老的智慧与现代的创新。</p>
 
-                <h3><i class="fas fa-lightbulb"></i>设计理念</h3>
-                <ul>
-                    <li><strong>道法自然</strong>：遵循密码学的本质规律，让AI理解加密的内在逻辑</li>
-                    <li><strong>知常明理</strong>：掌握密码学的常理，在规律中寻找突破</li>
-                    <li><strong>厚德载物</strong>：承载各种密码算法，兼容并包</li>
-                    <li><strong>自强不息</strong>：持续改进模型性能，追求完美</li>
-                </ul>
+                <h3><span class="fas fa-brain"></span> 二、"知"字在《道德经》中的出处与寓意</h3>
+                <div class="philosophy-section">
+                    <h4><strong>出处</strong></h4>
+                    <ul>
+                        <li>《道德经》第五十五章："知和曰常，知常曰明。"</li>
+                    </ul>
+                    <h4><strong>寓意</strong></h4>
+                    <ul>
+                        <li>"知"在《道德经》中代表<strong>智慧、认知、洞察、理解万物本质</strong>，是获得"明"与"通达"的基础。</li>
+                        <li>在AI/密码学领域，"知"象征模型的<strong>认知力、推理力、自我反思与判断</strong>。</li>
+                    </ul>
+                </div>
 
+                <h3><span class="fas fa-infinity"></span> 三、组合解释</h3>
+                <div class="philosophy-section">
+                    <p><strong>玄知大模型</strong>，即以模型智能，探幽玄之理、知晓安全奥义。寓意大模型如道家哲学中"玄"一般，能够洞悉万物根本（智能、数据、算法的本质），又如"知"一般，具备智慧与自我提升、推理洞察的能力，<strong>既深邃又明达，既神秘又翔智</strong>。</p>
+                    <ul>
+                        <li>用于密码学，强调洞悉安全本质，推理复杂密码关系。</li>
+                        <li>用于AI，突出强大认知与自学习能力。</li>
+                    </ul>
+                </div>
 
-
-                <h3><i class="fas fa-users"></i>团队介绍</h3>
-                <p>
-                    <i class="fas fa-users"></i>
-                    XXX<sup>1</sup>, XXX<sup>1</sup>, XXX<sup>1</sup>, XXX<sup>1</sup>, <br>
-                    XXX<sup>1</sup>, XXX<sup>1</sup>, XXX<sup>1</sup>, 
-                    XXX<sup>1</sup>, XXX<sup>1</sup>
-                </p>
-                <p class="affiliations">
-                    <i class="fas fa-university"></i>
-                    <sup>1</sup>西电NSS实验室
-                </p>
-
-
-
+                <h3><span class="fas fa-gem"></span> 总结</h3>
+                <div class="summary-section">
+                    <ul>
+                        <li><strong>"玄"</strong>：道的本源，奥秘无穷。</li>
+                        <li><strong>"知"</strong>：明察洞观，智慧通达。</li>
+                        <li><strong>"玄知大模型"</strong>：深奥智能，洞观未来。</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </main>
 
     <script>
-        // 导航栏滚动隐藏控制 - 任何滚动都隐藏
+        // 评估数据
+        const evaluationData = [
+            {
+                model: "CryptoLLM",
+                scores: [84.85, 79.11, 85.83, 85.00, 87.52, 88.76, 83.29, 84.22, 88.43, 78.60, 89.03, 88.42]
+            },
+            {
+                model: "GPT-4o",
+                scores: [76.6, 79.2, 83.3, 79.5, 82.7, 79.3, 80.2, 79.6, 86.6, 70.4, 85.7, 66.7]
+            },
+            {
+                model: "Gemini 2.5",
+                scores: [78.1, 74.6, 79.7, 76.8, 78.1, 81.4, 75.7, 76.9, 83.6, 69.0, 82.3, 68.9]
+            },
+            {
+                model: "Claude 4.0",
+                scores: [70.3, 66.3, 81.5, 78.3, 80.0, 67.8, 76.9, 78.4, 84.4, 63.5, 83.0, 64.3]
+            },
+            {
+                model: "豆包",
+                scores: [78.6, 77.9, 80.8, 72.5, 80.5, 85.3, 69.1, 70.4, 80.9, 68.2, 83.2, 68.2]
+            },
+            {
+                model: "Deepseek R1",
+                scores: [70.4, 66.0, 70.0, 72.3, 74.2, 77.2, 69.8, 72.2, 82.1, 65.3, 80.7, 61.4]
+            },
+            {
+                model: "GPT-o3",
+                scores: [70.8, 73.6, 75.3, 73.1, 78.8, 66.6, 72.1, 71.3, 80.0, 68.3, 82.0, 62.4]
+            },
+            {
+                model: "Qwen-plus",
+                scores: [76.9, 73.8, 77.9, 72.0, 81.0, 81.6, 72.6, 74.7, 83.4, 70.9, 82.4, 72.0]
+            }
+        ];
+
+        // 找到每列的最高分
+        function findBestScoresInColumns() {
+            const columnBests = [];
+            const numColumns = evaluationData[0].scores.length;
+            
+            for (let colIndex = 0; colIndex < numColumns; colIndex++) {
+                let maxScore = -1;
+                let maxRowIndex = -1;
+                
+                evaluationData.forEach((row, rowIndex) => {
+                    if (row.scores[colIndex] > maxScore) {
+                        maxScore = row.scores[colIndex];
+                        maxRowIndex = rowIndex;
+                    }
+                });
+                
+                columnBests.push({ rowIndex: maxRowIndex, score: maxScore });
+            }
+            
+            return columnBests;
+        }
+
+        // 生成表格数据
+        function generateTableData() {
+            const tbody = document.getElementById('evaluationTableBody');
+            const columnBests = findBestScoresInColumns();
+            
+            evaluationData.forEach((row, rowIndex) => {
+                const tr = document.createElement('tr');
+                
+                // 模型名称
+                const modelCell = document.createElement('td');
+                modelCell.className = 'model-name';
+                modelCell.textContent = row.model;
+                tr.appendChild(modelCell);
+                
+                // 分数
+                row.scores.forEach((score, scoreIndex) => {
+                    const td = document.createElement('td');
+                    td.textContent = score + '%';
+                    
+                    // 如果是这一列的最高分，则标红
+                    if (columnBests[scoreIndex].rowIndex === rowIndex) {
+                        td.className = 'best-score-cell';
+                    } else {
+                        td.className = 'normal-score';
+                    }
+                    
+                    tr.appendChild(td);
+                });
+                
+                tbody.appendChild(tr);
+            });
+        }
+
+        // 导航栏滚动隐藏控制
         let scrollTimeout;
 
         function setupSmartNavbar() {
             const navbar = document.querySelector('.navbar');
 
             window.addEventListener('scroll', () => {
-                // 防抖处理
                 if (scrollTimeout) {
                     clearTimeout(scrollTimeout);
                 }
 
                 const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 
-                // 只有在页面最顶部时才显示导航栏
                 if (currentScrollTop <= 10) {
                     navbar.classList.remove('hidden');
                     navbar.classList.remove('scrolled');
                 } else {
-                    // 任何滚动都隐藏导航栏
                     navbar.classList.add('hidden');
-                    // 滚动时添加背景效果（虽然隐藏了但保持状态）
                     if (currentScrollTop > 50) {
                         navbar.classList.add('scrolled');
                     }
                 }
 
-                // 设置滚动结束后的延迟处理
                 scrollTimeout = setTimeout(() => {
                     // 滚动结束逻辑
                 }, 100);
@@ -393,7 +460,6 @@
         function showComingSoon(event) {
             event.preventDefault();
             
-            // 创建提示框
             const modal = document.createElement('div');
             modal.className = 'coming-soon-modal';
             modal.innerHTML = `
@@ -430,18 +496,15 @@
             const buttons = document.querySelectorAll('[data-page]');
 
             function showPage(pageId) {
-                // 隐藏所有页面
                 contentPages.forEach(page => {
                     page.classList.remove('active');
                 });
                 
-                // 显示目标页面
                 const targetPage = document.getElementById(pageId);
                 if (targetPage) {
                     targetPage.classList.add('active');
                 }
                 
-                // 更新导航状态
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                 });
@@ -452,7 +515,6 @@
                 }
             }
 
-            // 绑定导航事件
             buttons.forEach(button => {
                 button.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -461,7 +523,6 @@
                 });
             });
 
-            // 将showPage函数添加到全局作用域
             window.showPage = showPage;
         }
 
@@ -474,13 +535,11 @@
                 return;
             }
 
-            // 克隆元素以移除之前的监听器
             const newMenuToggle = menuToggle.cloneNode(true);
             menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
 
             const freshMenuToggle = document.getElementById('mobileMenuToggle');
             
-            // 添加点击事件
             ['click', 'touchend'].forEach(eventType => {
                 freshMenuToggle.addEventListener(eventType, function(e) {
                     e.preventDefault();
@@ -496,14 +555,12 @@
                 }, { passive: false });
             });
 
-            // 点击菜单项后关闭菜单
             navLinks.addEventListener('click', (e) => {
                 if (e.target.classList.contains('nav-link')) {
                     navLinks.classList.remove('active');
                 }
             });
 
-            // 点击页面其他地方关闭菜单
             document.addEventListener('click', (e) => {
                 if (!freshMenuToggle.contains(e.target) && !navLinks.contains(e.target)) {
                     if (navLinks.classList.contains('active')) {
@@ -518,10 +575,7 @@
             const videoFrame = document.getElementById('videoFrame');
             const videoPlayer = document.getElementById('videoPlayer');
             
-            // 显示视频框架
             videoFrame.classList.remove('hidden');
-            
-            // 播放视频
             videoPlayer.play();
         }
 
@@ -529,30 +583,9 @@
             const videoFrame = document.getElementById('videoFrame');
             const videoPlayer = document.getElementById('videoPlayer');
             
-            // 隐藏视频框架并暂停播放
             videoFrame.classList.add('hidden');
             videoPlayer.pause();
-            videoPlayer.currentTime = 0; // 重置播放进度
-        }
-
-        // 核心能力标签切换
-        function setupCapabilityTabs() {
-            const tabButtons = document.querySelectorAll('.tab-button');
-            const tabPanels = document.querySelectorAll('.tab-panel');
-
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetTab = button.getAttribute('data-tab');
-                    
-                    // 移除所有活动状态
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabPanels.forEach(panel => panel.classList.remove('active'));
-                    
-                    // 添加活动状态
-                    button.classList.add('active');
-                    document.getElementById(targetTab).classList.add('active');
-                });
-            });
+            videoPlayer.currentTime = 0;
         }
 
         // 初始化所有功能
@@ -560,7 +593,7 @@
             setupNavigation();
             setupMobileMenu();
             setupSmartNavbar();
-            setupCapabilityTabs();
+            generateTableData();
         });
 
         // 滚动动画
@@ -578,7 +611,6 @@
             });
         }, observerOptions);
 
-        // 观察所有卡片元素
         document.addEventListener('DOMContentLoaded', () => {
             const cards = document.querySelectorAll('.cyber-card, .feature-card');
             cards.forEach(card => {
