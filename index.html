@@ -128,8 +128,7 @@
                 <h1>玄知大模型</h1>
                 <div class="hero-subtitle">CryptoLLM - 密码学大模型平台</div>
                 <p class="hero-description">
-                    基于千问大模型深度微调，专注于密码学推理与分析。
-                    融合古典易学智慧与现代密码学技术，探索大语言模型在密码推理领域的边界。
+                    致力于重塑乃传统密码算法与密码协议的分析设计模式，革新密码工程的实现方式
                 </p>
                 
                 <div class="button-group">
@@ -139,7 +138,7 @@
                     </a>
                     <a href="https://www.modelscope.cn/datasets/nsslab/CryptoBench" class="cyber-button" target="_blank">
                         <i class="fas fa-chart-bar"></i>
-                        测评基准
+                        官方网站
                     </a>
                     <a href="#" class="cyber-button paper-coming-soon" onclick="showComingSoon(event)">
                         <i class="fas fa-file-alt"></i>
@@ -151,15 +150,12 @@
             <!-- 模型介绍区域 -->
             <section class="video-showcase">
                 <div class="cyber-card">
-                    <h2><i class="fas fa-robot"></i>模型介绍</h2>
-                    <p>深入了解玄知大模型的技术原理和密码学推理能力，探索AI在密码分析领域的创新应用</p>
+                    <h2><i class="fas fa-robot"></i>视频介绍</h2>
+                    <p>深入了解玄知大模型的技术原理和密码学能力，探索AI在密码领域的创新应用</p>
                     
                     <div class="video-container">
-                        <div class="video-background">
-                            <div class="binary-rain"></div>
-                            <div class="shield-icon">
-                                <i class="fas fa-shield-halved"></i>
-                            </div>
+                        <div class="video-preview">
+                            <img src="./images/video-cover.png" alt="视频封面" class="video-cover-image">
                             <div class="video-overlay">
                                 <button class="play-button" onclick="playVideo()">
                                     <i class="fas fa-play"></i>
@@ -186,10 +182,10 @@
                 </div>
             </section>
 
-            <!-- 数据集构成 -->
+            <!-- 数据构成 -->
             <section class="dataset-composition">
                 <div class="cyber-card">
-                    <h2><i class="fas fa-database"></i>数据集构成</h2>
+                    <h2><i class="fas fa-database"></i>数据构成</h2>
                     <p>CryptoLLM 数据集结构全面，覆盖密码学多个核心方向与细分领域，为相关 AI 研究提供丰富且高质量的训练与测试资数据。</p>
                     
                     <div class="overview-image">
@@ -198,13 +194,47 @@
                 </div>
             </section>
 
-            <!-- 核心能力 -->
+            <!-- 四阶筑基 -->
             <section class="core-capabilities">
                 <div class="cyber-card">
-                    <h2><i class="fas fa-cog"></i>核心能力</h2>
-                    <p>玄知大模型在密码学领域的核心技术能力，从基础解密到高级推理，全方位支持密码学研究与应用。</p>
+                    <h2><i class="fas fa-cog"></i>四阶筑基</h2>
+                    <p>通过行业知识沉淀、技能淬炼、交互增强与人类偏好对齐，逐步打造面向密码学的高性能大模型。</p>
                     <div class="overview-image">
-                        <img src="./images/ability.png" alt="CryptoLLM Dataset Overview" class="full-width-image">
+                        <img src="./images/4step.png" alt="CryptoLLM Dataset Overview" class="full-width-image">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 基准构建 -->
+            <section class="dataset-composition">
+                <div class="cyber-card">
+                    <h2><i class="fas fa-microchip"></i>基准构建</h2>
+                    <p>通过科学分类、AI 辅助生成与人工核验三步流程，构建高质量的密码学大模型评测基准。</p>
+                    
+                    <div class="overview-image">
+                        <img src="./images/bench_make.png" alt="CryptoLLM Dataset Overview" class="full-width-image">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 设计理念 -->
+            <section class="core-capabilities">
+                <div class="cyber-card">
+                    <h2><i class="fas fa-rocket"></i>bench理念设计</h2>
+                    <p>涵盖 12 个核心方向与 74 个子领域，难度分布合理，全面反映密码学全景版图。</p>
+                    <div class="overview-image">
+                        <img src="./images/bench_3.png" alt="CryptoLLM Dataset Overview" class="full-width-image">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 智能体赋能 -->
+            <section class="core-capabilities">
+                <div class="cyber-card">
+                    <h2><i class="fas fa-brain"></i> 智能体赋能</h2>
+                    <p>融合大模型与智能体技术，支持安全多方计算的自动化规划、编码、测试与验证，全流程助力密码工程落地。</p>
+                    <div class="overview-image">
+                        <img src="./images/agent.png" alt="CryptoLLM Dataset Overview" class="full-width-image">
                     </div>
                 </div>
             </section>
@@ -212,69 +242,48 @@
 
         <!-- Benchmark页面 -->
         <div id="benchmark" class="content-page">
-            <!-- 模型评估 -->
+            <!-- 模型评估 - 合并为一个大框 -->
             <section class="model-evaluation">
                 <div class="cyber-card">
                     <h2><i class="fas fa-chart-bar"></i>模型评估</h2>
-                    <p>我们在CryptoLLM基准测试中评估了多个先进的大语言模型，包括Claude-3.5、o1、DeepSeek-V3和DeepSeek-R1等推理专用模型。以下是各模型在密码学不同领域的表现：</p>
+                    <!--<p>我们在CryptoLLM基准测试中评估了多个先进的大语言模型，包括Claude-3.5、o1、DeepSeek-V3和DeepSeek-R1等推理专用模型。以下是各模型在密码学不同领域的表现：</p>-->
                     
-                    <div class="new-evaluation-table-container">
-                        <table class="new-evaluation-table">
-                            <thead>
-                                <tr>
-                                    <th class="model-header">大模型</th>
-                                    <th>密码基础</th>
-                                    <th>数学基础</th>
-                                    <th>对称密码</th>
-                                    <th>非对称密码</th>
-                                    <th>密码协议</th>
-                                    <th>哈希函数</th>
-                                    <th>数字签名</th>
-                                    <th>密码库与语言</th>
-                                    <th>硬件中的密码</th>
-                                    <th>网安中的密码</th>
-                                    <th>密码高级主题</th>
-                                    <th>安全性证明</th>
-                                </tr>
-                            </thead>
-                            <tbody id="evaluationTableBody">
-                                <!-- 数据将通过JavaScript插入 -->
-                            </tbody>
-                        </table>
+                    <!-- 评估结果图表 -->
+                    <div class="evaluation-images">
+                        <!-- 第一张图：性能对比表格 -->
+                        <div class="evaluation-image">
+                            <img src="./images/result1.png"  class="full-width-image">
+                            <p class="image-caption">
+                        </div>
+                        
+                        <!-- 第二张图：性能可视化 -->
+                        <div class="evaluation-image">
+                            <img src="./images/result.png"  class="full-width-image">
+                            <p class="image-caption">
+                        </div>
                     </div>
                     
-                    <div class="overview-image">
-                        <img src="./images/bench.jpg" alt="Benchmark Visualization" class="full-width-image">
-                        <p class="image-caption">Model Performance - Accuracy vs. Levenshtein Similarity</p>
+                    <!-- 关键发现总结 -->
+                    <div class="evaluation-summary">
+                        <div class="key-findings">
+                            <h3>关键发现</h3>
+                            <ul>
+                                <li>玄知大模型在 12 个密码学核心方向测试中均取得领先成绩，显著优于通用大模型与主流 AI 工具</li>
+                                <li>在密码算法分析、协议设计与工程实现三大领域均展现出卓越性能和专业化优势</li>
+                                <li>支持自动化算法建模、协议安全验证与工程性能优化，显著降低研发门槛、提升效率与质量</li>
+                                <li>已成功应用于多方安全计算等前沿场景，推动密码学技术智能化落地</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </section>
-
-            <!-- 性能评估 -->
-            <div class="cyber-card">
-                <h2><i class="fas fa-chart-line"></i>性能评估</h2>
-                <p>基于CryptoLLM基准测试的评估显示，即使是最先进的大语言模型在密码学推理任务上仍有很大提升空间。</p>
-                
-                <div class="overview-image">
-                    <img src="./images/performance.jpeg" alt="Performance Evaluation Overview" class="full-width-image">
-                    <p class="image-caption">Performance Evaluation Overview</p>
-                </div>
-                
-                <div class="evaluation-summary">
-                    <div class="key-findings">
-                        <h3>关键发现</h3>
-                        <ul>
-                            <li>CryptoLLM在所有测试领域都取得了<span class="highlight-score">最佳性能</span>，展现了专业化训练的优势</li>
-                            <li>推理专用模型（如o1、DeepSeek-R1）在复杂密码任务上表现更优</li>
-                            <li>密码基础和对称密码领域相对容易破解，非对称密码和安全性证明极具挑战性</li>
-                            <li>开源模型与闭源模型在密码学推理能力上存在显著差距</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
 
-        <!-- 关于页面 -->
+
+
+        
+
+<!-- 关于页面 -->
         <div id="about" class="content-page">
             <div class="cyber-card">
                 <h2><i class="fas fa-info-circle"></i>关于玄知大模型</h2>
@@ -314,13 +323,32 @@
                     </ul>
                 </div>
 
-                <h3><span class="fas fa-gem"></span> 总结</h3>
+
+
+                <h3><span class="fas fa-palette"></span> 四、Logo设计理念</h3>
+                <div class="logo-design-section">
+                    <p><strong>玄知大模型的 Logo 融合了三重意象</strong></p>
+                    <ul>
+                        <li><strong>莫比乌斯环</strong> - 象征应数字世界，由密码安全的形成闭环</li>
+                        <li><strong>阴阳太极</strong> - 契合"玄中求知、知中见道"的理念</li>
+                        <li><strong>中心似"玄"字</strong> - 直观传达深奥与隐秘的意象</li>
+                    </ul>
+                </div>
+            
+                
+            <h3><span class="fas fa-gem"></span> 总结</h3>
                 <div class="summary-section">
                     <ul>
                         <li><strong>"玄"</strong>：道的本源，奥秘无穷。</li>
                         <li><strong>"知"</strong>：明察洞观，智慧通达。</li>
                         <li><strong>"玄知大模型"</strong>：深奥智能，洞观未来。</li>
                     </ul>
+                </div>
+            </div>
+            <!-- 页面底部浮动logo - 移到卡片外面 -->
+            <div class="about-footer-hero">
+                <div class="hero-icon">
+                    <img src="./images/logo.png" alt="玄知大模型 Logo" class="hero-logo">
                 </div>
             </div>
         </div>
