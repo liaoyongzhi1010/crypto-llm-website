@@ -14,10 +14,6 @@
     animation: fadeIn 0.3s ease-out;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
 .hero-logo {
     width: 150px;        /* 按需要调整宽度 */
     height: auto;       /* 保持比例 */
@@ -31,6 +27,11 @@
     margin-right: 8px; /* 图像与文字间距 */
     vertical-align: baseline; /* 让图像和文字垂直对齐 */
 }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .video-frame.hidden {
     display: none;
 }
@@ -912,6 +913,21 @@
 .news-more {
     text-align: center;
     margin-top: 2rem;
+}
+about-footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto 2rem;
+    padding: 2rem;
+}
+
+
+/* 关于页面底部logo样式 - 完全照搬首页hero */
+.about-footer-hero {
+    text-align: center;
+    padding: 2rem 0;
+    margin: 2rem 0;
 }
 
 .more-link {
