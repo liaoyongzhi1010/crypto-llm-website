@@ -1079,12 +1079,12 @@
     }
 
     .hero h1 {
-    font-size: 1.8rem;    /* 原来是3rem */
+    font-size: 1.4rem;    /* 原来是3rem */
     line-height: 1.2;     /* 新增：优化行高 */
     }
 
     .hero-subtitle {
-    font-size: 1.1rem;    /* 原来是1.8rem */
+    font-size: 1.0rem;    /* 原来是1.8rem */
     line-height: 1.1;     /* 新增：优化行高 */
     }
 
