@@ -1127,27 +1127,27 @@
     }
 
     .video-preview {
-        height: 100%;
-        position: relative;
+        height: 100% !important;
+        position: relative !important;
     }
 
     .video-cover-image {
-        width: 100%;
-        height: 100%;
+        width: 100% !important;
+        height: 100% !important;
         object-fit: cover !important;  /* 改为cover以适应容器 */
     }
 
     .video-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
         display: flex !important;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.4);
-        z-index: 100;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(0, 0, 0, 0.4) !important;
+        z-index: 100 !important;
     }
 
     .shield-icon {
