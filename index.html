@@ -80,6 +80,71 @@
 
         /* 响应式设计 */
         @media (max-width: 768px) {
+            .video-container {
+                height: 280px !important;
+                position: relative !important;
+                overflow: hidden !important;
+                display: block !important;
+            }
+            
+            .video-preview {
+                width: 100% !important;
+                height: 100% !important;
+                position: relative !important;
+                display: block !important;
+            }
+            
+            .video-cover-image {
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                display: block !important;
+            }
+            
+            .video-overlay {
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background: rgba(0, 0, 0, 0.4) !important;
+                z-index: 10 !important;
+            }
+            
+            .play-button {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+                margin: 0 !important;
+                width: 80px !important;
+                height: 80px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                background: rgba(255, 255, 255, 0.25) !important;
+                border: 2px solid #3498db !important;
+                border-radius: 50% !important;
+                color: #3498db !important;
+                cursor: pointer !important;
+                backdrop-filter: blur(10px) !important;
+            }
+            
+            .play-button i {
+                font-size: 1.1rem !important;
+                margin: 0 !important;
+            }
+            
+            .play-button span {
+                font-size: 0.65rem !important;
+                margin-top: 2px !important;
+                line-height: 1 !important;
+            }
+
             .new-evaluation-table-container {
                 margin: 1rem -1rem;
                 border-radius: 0;
