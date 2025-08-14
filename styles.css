@@ -1123,18 +1123,25 @@
     }
 
     .video-container {
-        height: 300px !important;  /* 从400px减小到300px */
+        height: 250px !important;  /* 适合手机的高度 */
+        position: relative !important;
+        overflow: hidden !important;
+        border-radius: 8px !important;
     }
 
     .video-preview {
+        width: 100% !important;
         height: 100% !important;
         position: relative !important;
+        overflow: hidden !important;
     }
 
     .video-cover-image {
         width: 100% !important;
         height: 100% !important;
-        object-fit: cover !important;  /* 改为cover以适应容器 */
+        object-fit: cover !important;  /* 保持比例，裁剪多余部分 */
+        object-position: center !important;  /* 居中显示 */
+        background: #1a1a1a !important;
     }
 
     .video-overlay {
@@ -1150,37 +1157,49 @@
         z-index: 100 !important;
     }
 
+
+
     .shield-icon {
         font-size: 3rem;  /* 从4rem减小到3rem */
     }
 
     .play-button {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;  /* 精确居中 */
         display: flex !important;
-        position: relative;  /* 改为相对定位 */
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        width: 80px;   /* 从100px减小到80px */
-        height: 80px;  /* 从100px减小到80px */
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.25);
-        border: 2px solid var(--secondary-color);
-        border-radius: 50%;
-        color: var(--secondary-color);
-        cursor: pointer;
-        transition: var(--transition);
-        justify-content: center;
-        backdrop-filter: blur(10px);
-        z-index: 20;
-    }        
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 80px !important;
+        height: 80px !important;
+        background: rgba(255, 255, 255, 0.25) !important;
+        border: 2px solid #3498db !important;
+        border-radius: 50% !important;
+        color: #3498db !important;
+        cursor: pointer !important;
+        backdrop-filter: blur(10px) !important;
+        z-index: 200 !important;
+        transition: all 0.3s ease !important;
+    }       
 
-    .play-button i {
-        font-size: 1.1rem;  /* 从1.3rem减小到1.1rem */
+    .play-button:hover {
+        background: rgba(52, 152, 219, 0.3) !important;
+        transform: translate(-50%, -50%) scale(1.1) !important;
+        box-shadow: 0 0 20px rgba(52, 152, 219, 0.5) !important;
     }
-
+    
+    .play-button i {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.3rem !important;
+    }
+    
     .play-button span {
-        font-size: 0.7rem;  /* 从0.75rem减小到0.7rem */
-        white-space: nowrap;
+        font-size: 0.7rem !important;
+        font-weight: 600 !important;
+        white-space: nowrap !important;
+        text-align: center !important;
     }
 
     .shield-icon {
