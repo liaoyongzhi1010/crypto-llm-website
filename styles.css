@@ -1077,14 +1077,19 @@
         opacity: 1;
         visibility: visible;
     }
-
+    
+    .cyber-card h2 {
+    font-size: 1.6rem !important;  /* 视频介绍标题大小 */
+    margin-bottom: 1.6rem !important;
+    }
+    
     .hero h1 {
-    font-size: 2.4rem !important;    /* 原来是3rem */
+    font-size: 2.8rem !important;    /* 原来是3rem */
     line-height: 1.4 !important;     /* 新增：优化行高 */
     }
 
     .hero-subtitle {
-    font-size: 1.8rem !important;    /* 原来是1.8rem */
+    font-size: 1.4rem !important;    /* 原来是1.8rem */
     line-height: 1.2 !important;     /* 新增：优化行高 */
     }
 
