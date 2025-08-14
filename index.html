@@ -80,13 +80,6 @@
 
         /* 响应式设计 */
         @media (max-width: 768px) {
-            .video-container {
-                height: 280px !important;
-                position: relative !important;
-                overflow: hidden !important;
-                display: block !important;
-            }
-            
             .video-preview {
                 width: 100% !important;
                 height: 100% !important;
@@ -94,11 +87,19 @@
                 display: block !important;
             }
             
+            .video-container {
+                height: 280px !important;
+                position: relative !important;
+                overflow: hidden !important;
+            }
+            
             .video-cover-image {
                 width: 100% !important;
-                height: 100% !important;
+                height: 80% !important;  /* 让图片稍微小一点 */
                 object-fit: cover !important;
-                display: block !important;
+                object-position: center 40% !important;  /* 调整图片显示位置 */
+                position: absolute !important;
+                top: -20% !important;  /* 向上偏移 */
             }
             
             .video-overlay {
@@ -116,7 +117,7 @@
             
             .play-button {
                 position: relative !important;
-                top: auto !important;
+                top: -30 !important;
                 left: auto !important;
                 transform: none !important;
                 margin: 0 !important;
