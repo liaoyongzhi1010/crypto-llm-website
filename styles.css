@@ -1079,13 +1079,13 @@
     }
 
     .hero h1 {
-    font-size: 1.4rem;    /* 原来是3rem */
-    line-height: 1.2;     /* 新增：优化行高 */
+    font-size: 1.4rem !important;    /* 原来是3rem */
+    line-height: 1.2 !important;     /* 新增：优化行高 */
     }
 
     .hero-subtitle {
-    font-size: 1.0rem;    /* 原来是1.8rem */
-    line-height: 1.1;     /* 新增：优化行高 */
+    font-size: 1.0rem !important;    /* 原来是1.8rem */
+    line-height: 1.1 !important;     /* 新增：优化行高 */
     }
 
     .hero-description {
@@ -1119,7 +1119,7 @@
     }
 
     .video-container {
-        height: 300px;  /* 从400px减小到300px */
+        height: 300px !important;  /* 从400px减小到300px */
     }
 
     .video-preview {
@@ -1130,7 +1130,7 @@
     .video-cover-image {
         width: 100%;
         height: 100%;
-        object-fit: cover;  /* 改为cover以适应容器 */
+        object-fit: cover !important;  /* 改为cover以适应容器 */
     }
 
     .video-overlay {
