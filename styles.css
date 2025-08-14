@@ -1079,13 +1079,21 @@
     }
 
     .hero h1 {
-        font-size: 3rem;
+    font-size: 2.2rem;    /* 原来是3rem */
+    line-height: 1.2;     /* 新增：优化行高 */
     }
 
     .hero-subtitle {
-        font-size: 1.8rem;
+    font-size: 1.3rem;    /* 原来是1.8rem */
+    line-height: 1.3;     /* 新增：优化行高 */
     }
 
+    .hero-description {
+    font-size: 1rem;      /* 新增：缩小描述文字 */
+    line-height: 1.6;     /* 新增：优化行高 */
+    margin: 0 auto 2rem;  /* 新增：优化边距 */
+    
+}
     .button-group {
         flex-direction: column;
         align-items: center;
